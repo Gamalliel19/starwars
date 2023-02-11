@@ -148,7 +148,7 @@ const ScaleIcon = ({ fill, size, width = 24, height = 24, ...props }) => {
   );
 };
 
-export const icons = {
+export default icons = {
   chevron: <ChevronDownIcon fill='currentColor' size={16} />,
   scale: <ScaleIcon fill='var(--nextui-colors-warning)' size={30} />,
   activity: <ActivityIcon fill='var(--nextui-colors-secondary)' size={30} />,
