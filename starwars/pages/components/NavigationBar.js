@@ -6,7 +6,7 @@ import {
   Dropdown,
   Button,
 } from '@nextui-org/react';
-import { icons } from './Icons';
+import icons from './Icons';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/router';
 
