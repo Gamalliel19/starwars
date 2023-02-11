@@ -1,9 +1,7 @@
 import { Text, Textarea, Grid, Button } from '@nextui-org/react';
-import { withPageAuth } from '@supabase/auth-helpers-nextjs';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Alert from '../components/Alert';
 
 export default function Post() {
   const user = useUser();
