@@ -4,10 +4,14 @@ import { createBrowserSupabaseClient } from '@supabase/auth-helpers-nextjs';
 import { SessionContextProvider } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
 import NavigationBar from './components/NavigationBar';
-import Box from './components/Box';
+import { styled } from '@nextui-org/react';
 
 export default function App({ Component, pageProps }) {
   const [supabaseClient] = useState(() => createBrowserSupabaseClient());
+
+  const Box = styled('div', {
+    boxSizing: 'border-box',
+  });
 
   return (
     <>

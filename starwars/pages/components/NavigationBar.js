@@ -8,7 +8,6 @@ import {
 } from '@nextui-org/react';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useRouter } from 'next/router';
-import Icons from './Icons';
 
 export default function NavigationBar() {
   const supabaseClient = useSupabaseClient();
@@ -65,7 +64,6 @@ export default function NavigationBar() {
                 dflex: 'center',
                 svg: { pe: 'none' },
               }}
-              iconRight={Icons.chevron}
               ripple={false}
             >
               Features
@@ -95,7 +93,6 @@ export default function NavigationBar() {
               key='autoscaling'
               showFullDescription
               description='ACME scales apps to meet user demand, automagically, based on load.'
-              icon={Icons.scale}
             >
               Akinator
             </Dropdown.Item>
@@ -103,7 +100,6 @@ export default function NavigationBar() {
               key='usage_metrics'
               showFullDescription
               description='Real-time metrics to debug issues. Slow query added? We’ll show you exactly where.'
-              icon={Icons.activity}
             >
               Info Tournament
             </Dropdown.Item>
@@ -111,7 +107,6 @@ export default function NavigationBar() {
               key='production_ready'
               showFullDescription
               description='ACME runs on ACME, join us and others serving requests at web scale.'
-              icon={Icons.flash}
             >
               Info Event
             </Dropdown.Item>
@@ -119,7 +114,6 @@ export default function NavigationBar() {
               key='99_uptime'
               showFullDescription
               description='Applications stay on the grid with high availability and high uptime guarantees.'
-              icon={Icons.server}
             >
               Komunitas
             </Dropdown.Item>
