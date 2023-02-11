@@ -65,7 +65,7 @@ export default function NavigationBar() {
                 dflex: 'center',
                 svg: { pe: 'none' },
               }}
-              iconRight={icons.chevron}
+              iconRight={Icons.chevron}
               ripple={false}
             >
               Features
@@ -95,7 +95,7 @@ export default function NavigationBar() {
               key='autoscaling'
               showFullDescription
               description='ACME scales apps to meet user demand, automagically, based on load.'
-              icon={icons.scale}
+              icon={Icons.scale}
             >
               Akinator
             </Dropdown.Item>
@@ -103,7 +103,7 @@ export default function NavigationBar() {
               key='usage_metrics'
               showFullDescription
               description='Real-time metrics to debug issues. Slow query added? We’ll show you exactly where.'
-              icon={icons.activity}
+              icon={Icons.activity}
             >
               Info Tournament
             </Dropdown.Item>
@@ -111,7 +111,7 @@ export default function NavigationBar() {
               key='production_ready'
               showFullDescription
               description='ACME runs on ACME, join us and others serving requests at web scale.'
-              icon={icons.flash}
+              icon={Icons.flash}
             >
               Info Event
             </Dropdown.Item>
@@ -119,7 +119,7 @@ export default function NavigationBar() {
               key='99_uptime'
               showFullDescription
               description='Applications stay on the grid with high availability and high uptime guarantees.'
-              icon={icons.server}
+              icon={Icons.server}
             >
               Komunitas
             </Dropdown.Item>
