@@ -50,10 +50,20 @@ export default function NavigationBar() {
         hideIn='xs'
         variant='underlined'
       >
-        <Navbar.Link isActive href='/'>
-          Home
-        </Navbar.Link>
-        <Navbar.Link href='/lapangan'>Cari Lapangan</Navbar.Link>
+        {router.pathname === '/' ? (
+          <Navbar.Link isActive href='/'>
+            Home
+          </Navbar.Link>
+        ) : (
+          <Navbar.Link href='/'> Home </Navbar.Link>
+        )}
+        {router.pathname === '/lapangan' ? (
+          <Navbar.Link isActive href='/lapangan'>
+            Cari Lapangan
+          </Navbar.Link>
+        ) : (
+          <Navbar.Link href='/lapangan'>Cari Lapangan</Navbar.Link>
+        )}
         <Dropdown isBordered>
           <Navbar.Item>
             <Dropdown.Button
@@ -94,7 +104,7 @@ export default function NavigationBar() {
               showFullDescription
               description='ACME scales apps to meet user demand, automagically, based on load.'
             >
-              Akinator
+              Tentang Sportify
             </Dropdown.Item>
             <Dropdown.Item
               key='usage_metrics'
@@ -170,6 +180,10 @@ export default function NavigationBar() {
                 </Dropdown.Item>
                 <Dropdown.Item key='posting' withDivider>
                   <Navbar.Link href='/post'>Post Pencarian</Navbar.Link>
+                </Dropdown.Item>
+
+                <Dropdown.Item key='posting lapangan' withDivider>
+                  <Navbar.Link href='/post/lapangan'>Post Lapangan</Navbar.Link>
                 </Dropdown.Item>
 
                 <Dropdown.Item

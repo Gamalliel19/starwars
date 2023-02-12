@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
-import PostCard from './components/PostCard';
+import PostCard from '../components/PostCard';
 import { useState, useEffect } from 'react';
 
 export default function Home() {
@@ -50,6 +50,7 @@ export default function Home() {
             partisipan={post.partisipan}
             email={post.user_email}
             timestamp={post.inserted_at}
+            post_id={post.id}
           />
         ))}
       </main>

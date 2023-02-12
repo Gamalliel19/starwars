@@ -5,11 +5,16 @@
   padding: 0;
   margin: 0;
 }
-
+.span {
+  color: #7828c8;
+}
 body {
   font-family: 'Rubik', sans-serif;
 }
 
+.mt-16 {
+  margin-top: 32px;
+}
 .card-mt {
   margin-top: 24px;
 }
@@ -31,4 +36,8 @@ body {
   background-color: #f2dede;
   border-color: #ebcccc;
   color: #a94442;
+}
+
+.link {
+  font-size: 24px;
 }

@@ -1,4 +1,4 @@
-import { Text, Textarea, Grid, Button } from '@nextui-org/react';
+import { Text, Textarea, Grid, Button, Spacer, Input } from '@nextui-org/react';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
@@ -22,7 +22,7 @@ export default function Post() {
     setPostData({ ...postData, [e.target.name]: e.target.value });
   };
 
-  const createArticle = async () => {
+  const createPost = async () => {
     try {
       const { data, error } = await supabaseClient
         .from('posts')
@@ -49,84 +49,104 @@ export default function Post() {
   };
   return (
     <Grid.Container gap={1}>
-      <Text h3>Judul</Text>
+      <Spacer y={2} />
       <Grid xs={12}>
-        <Textarea
-          name='title'
-          aria-label='title'
-          placeholder='Judul Postingan'
-          fullWidth={true}
-          rows={1}
-          size='xl'
-          onChange={handleChange}
-        />
+        <Grid xs={6}>
+          <Input
+            underlined
+            labelPlaceholder='Judul Postingan'
+            color='secondary'
+            name='title'
+            aria-label='title'
+            fullWidth={true}
+            rows={1}
+            size='xl'
+            onChange={handleChange}
+          />
+        </Grid>
+        <Grid xs={6}>
+          <Input
+            underlined
+            labelPlaceholder='Jenis Olahraga'
+            color='secondary'
+            name='jenis_olahraga'
+            aria-label='jenis_olahraga'
+            fullWidth={true}
+            rows={1}
+            size='xl'
+            onChange={handleChange}
+          />
+        </Grid>
       </Grid>
-      <Text h3>Jenis Olahraga</Text>
+      <Spacer y={3} />
       <Grid xs={12}>
-        <Textarea
-          name='jenis_olahraga'
-          aria-label='jenis_olahraga'
-          placeholder='Jenis Olahraga'
-          fullWidth={true}
-          rows={1}
-          size='xl'
-          onChange={handleChange}
-        />
+        <Grid xs={6}>
+          <Input
+            underlined
+            labelPlaceholder='Partisipan'
+            color='secondary'
+            name='partisipan'
+            aria-label='partisipan'
+            fullWidth={true}
+            typeof='number'
+            rows={1}
+            size='xl'
+            onChange={handleChange}
+          />
+        </Grid>
+
+        <Grid xs={6}>
+          <Input
+            underlined
+            labelPlaceholder='Link Group'
+            color='secondary'
+            name='whatsapp_group_link'
+            aria-label='whatsapp_group_link'
+            fullWidth={true}
+            rows={6}
+            size='xl'
+            onChange={handleChange}
+          />
+        </Grid>
       </Grid>
-      <Text h3>Lokasi Olahraga</Text>
+
+      <Spacer y={3} />
       <Grid xs={12}>
         <Textarea
+          underlined
+          labelPlaceholder='Lokasi Lapangan'
+          color='secondary'
           name='lokasi'
           aria-label='lokasi'
-          placeholder='lokasi'
           fullWidth={true}
-          rows={1}
+          rows={3}
           size='xl'
           onChange={handleChange}
         />
       </Grid>
-      <Text h3>Partisipan</Text>
+
+      <Spacer y={3} />
       <Grid xs={12}>
         <Textarea
-          name='partisipan'
-          aria-label='partisipan'
-          placeholder='partisipan'
-          fullWidth={true}
-          typeof='number'
-          rows={1}
-          size='xl'
-          onChange={handleChange}
-        />
-      </Grid>
-      <Text h3>Deskripsi</Text>
-      <Grid xs={12}>
-        <Textarea
+          underlined
+          labelPlaceholder='Deskripsi Lapangan'
+          color='secondary'
           name='content'
           aria-label='content'
-          placeholder='content'
           fullWidth={true}
-          rows={6}
+          rows={3}
           size='xl'
           onChange={handleChange}
         />
       </Grid>
-      <Text h3>Link Group</Text>
+
       <Grid xs={12}>
-        <Textarea
-          name='whatsapp_group_link'
-          aria-label='whatsapp_group_link'
-          placeholder='whatsapp_group_link'
-          fullWidth={true}
-          rows={6}
-          size='xl'
-          onChange={handleChange}
-        />
+        <Text>
+          Posting as <span className='span'>{user?.email}</span>
+        </Text>
       </Grid>
-      <Grid xs={12}>
-        <Text>Posting as {user?.email}</Text>
-      </Grid>
-      <Button color={'secondary'} onPress={createArticle}>
-        Create Article
+      <Button className='mt-16' color={'secondary'} onPress={createPost}>
+        Create Post
       </Button>
     </Grid.Container>
   );

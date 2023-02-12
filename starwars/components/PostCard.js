@@ -1,4 +1,4 @@
-import { Card, Text, Grid } from '@nextui-org/react';
+import { Card, Text, Grid, Link, Container, Flex } from '@nextui-org/react';
 import { Badge } from '@nextui-org/react';
 
 export default function PostCard({
@@ -8,6 +8,7 @@ export default function PostCard({
   partisipan,
   email,
   timestamp,
+  post_id,
 }) {
   const timeSince = (timestamp) => {
     const now = new Date();
@@ -41,13 +42,22 @@ export default function PostCard({
 
   return (
     <div className='card-mt'>
-      <Card>
+      {/* isPressable */}
+      <Card isHoverable variant='bordered'>
         <Card.Header>
           <Grid.Container css={{ pl: '$6' }}>
             <Grid xs={12}>
-              <Text h3 css={{ lineHeight: '$xs' }}>
+              <Link
+                color={'secondary'}
+                href={`/${post_id}`}
+                css={{
+                  lineHeight: '$md',
+                  fontWeight: '$bold',
+                }}
+                className='link'
+              >
                 {title}
-              </Text>
+              </Link>
             </Grid>
             <Grid xs={12}>
               <Text css={{ color: '$accents8' }}>
@@ -57,19 +67,14 @@ export default function PostCard({
           </Grid.Container>
         </Card.Header>
         <Card.Divider />
-        <Card.Body css={{ py: '$10', pl: '$6' }}>
+        <Card.Body css={{ py: '$10', pl: '$10' }}>
           <Text>{content}</Text>
         </Card.Body>
-        <Card.Footer>
-          <Badge
-            enableShadow
-            disableOutline
-            color={'secondary'}
-            css={{ mr: '$6' }}
-          >
+        <Card.Footer css={{ pl: '$8' }}>
+          <Badge disableOutline color={'success'} css={{ mr: '$6' }}>
             {jenis}
           </Badge>
-          <Badge enableShadow disableOutline color={'warning'}>
+          <Badge disableOutline color={'warning'}>
             Partisipan: {partisipan}
           </Badge>
         </Card.Footer>
